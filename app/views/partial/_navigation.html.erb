@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <%= link_to 'Bimkat Sumteng', root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="navbar-collapse collapse w-100" id="navbarSupportedContent">
+    <ul class="navbar-nav w-100 justify-content-center">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tentang
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/tentang/visi_misi">Visi dan Misi Kantor Kementerian Agama Kabupaten Sumba Tengah</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/tentang/tekad_urakat">Tekad Pelayanan Seksi Urusan Agama Katolik</a>
+          <a class="dropdown-item" href="/tentang/tekad_pendakat">Tekad Pelayanan Penyelenggara Pendidikan Agama Katolik</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Data
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/data/keagamaan_katolik">Data Keagamaan Katolik</a>
+          <a class="dropdown-item" href="/data/pendidikan_katolik">Data Pendidikan Agama Katolik</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Galeri
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/galeri/foto">Foto</a>
+          <a class="dropdown-item" href="/galeri/video">Video</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Informasi
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/informasi/berita_terkini">Berita Terkini</a>
+          <a class="dropdown-item" href="/informasi/pengumuman">Pengumuman</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Laporan
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/laporan/penyuluh_agama_katolik">Laporan Penyuluh Agama Katolik</a>
+          <a class="dropdown-item" href="/laporan/kinerja_pegawai_bimkat_sumteng">Laporan Kinerja Pegawai Bimkat Sumteng</a>
+        </div>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span id="user-name"><%= current_user.nama_pengguna %></span>
+          <span class="caret"></span>
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to 'Edit Profile', edit_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+        </div>
+      </li>
+      <% else # user not signed it %>
+      <li class="nav-item"><%= link_to 'Masuk', masuk_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Mendaftar', daftar_path, class: 'nav-link' %></li>
+      <% end # if user is signed it %>
+    </ul>
+  </div>
+</nav>
