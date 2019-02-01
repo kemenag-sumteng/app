@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Bimas Katolik Sumba Tengah</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,18 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-light">
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+    </main>
+    <%= render "partial/footer" %>
   </body>
 </html>
