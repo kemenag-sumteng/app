@@ -65,8 +65,8 @@
         </div>
       </li>
       <% else # user not signed it %>
-      <li class="nav-item"><%= link_to 'Masuk', masuk_path, class: 'nav-link' %></li>
-      <li class="nav-item"><%= link_to 'Mendaftar', daftar_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Masuk', new_user_session_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Mendaftar', user_registration_path, class: 'nav-link' %></li>
       <% end # if user is signed it %>
     </ul>
   </div>
