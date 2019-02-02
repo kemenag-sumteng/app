@@ -55,7 +55,7 @@
       <% if user_signed_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span id="user-name"><%= current_user.nama_pengguna %></span>
+          <span id="user-name"><%= current_user.email %></span>
           <span class="caret"></span>
         </a>
 
@@ -66,7 +66,7 @@
       </li>
       <% else # user not signed it %>
       <li class="nav-item"><%= link_to 'Masuk', new_user_session_path, class: 'nav-link' %></li>
-      <li class="nav-item"><%= link_to 'Mendaftar', user_registration_path, class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Mendaftar', user_session_path, class: 'nav-link' %></li>
       <% end # if user is signed it %>
     </ul>
   </div>
