@@ -17,4 +17,5 @@
 ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'halaman', 'halaman'
 	inflect.irregular 'kategori', 'kategori'
+	inflect.irregular 'e_data', 'e_data'
 end
