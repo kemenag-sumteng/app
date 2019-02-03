@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create(
+	nama: 'Administrator',
+	email: 'admin@bimkat-sumteng.go.id',
+	password: 'kata_kunci_valid',
+	password_confirmation: 'kata_kunci_valid',
+	super_admin: 1)
