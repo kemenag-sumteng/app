@@ -28,5 +28,63 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    alias_action :create, :read, :update, to: :cru
+
+    can :read, EDataKeagamaanKatolik
+
+    if user.super_admin?
+      can :manage, :all
+    end
+    
+    if user.kasie_urakat?
+      can :manage, EDataKeagamaanKatolik
+      #can :manage, GaleriFoto
+      #can :manage, GaleriVideo
+      #can :manage, ELaporanPenyuluhAgamaKatolik
+      #can :manage, InformasiBeritaTerkini
+      #can :manage, InformasiPengumuman
+    end
+
+    if user.penyelenggara_pendakat?
+      #can :manage, GaleriFoto
+      #can :manage, GaleriVideo
+      #can :manage, ELaporanGuruAgamaKatolik
+      #can :manage, EDataPendidikanAgamaKatolik
+      #can :manage, InformasiBeritaTerkini
+      #can :manage, InformasiPengumuman
+
+    end
+
+    if user.pegawai_urakat?
+      can :manage, EDataKeagamaanKatolik
+      #can :manage, GaleriFoto
+      #can :manage, GaleriVideo
+      #can :manage, InformasiBeritaTerkini
+      #can :manage, InformasiPengumuman
+    end
+
+    if user.pegawai_pendakat?
+      #can :manage, GaleriFoto
+      #can :manage, GaleriVideo
+      #can :manage, EDataPendidikanAgamaKatolik
+      #can :manage, InformasiBeritaTerkini
+      #can :manage, InformasiPengumuman
+    end
+
+    if user.anggota_urakat?
+      #can :manage, ELaporanPenyuluhAgamaKatolik
+      #can :manage, InformasiBeritaTerkini
+      #can :manage, InformasiPengumuman
+    end
+
+    if user.anggota_pendakat?
+      #can :manage, ELaporanGuruAgamaKatolik
+      #can :manage, InformasiBeritaTerkini
+      #can :manage, InformasiPengumuman
+    end
+
+    if user.pengunjung?
+      can :read, EDataKeagamaanKatolik
+    end
   end
 end
