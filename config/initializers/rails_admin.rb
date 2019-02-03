@@ -7,9 +7,16 @@ RailsAdmin.config do |config|
   #   warden.authenticate! scope: :user
   # end
   # config.current_user_method(&:current_user)
+  config.authorize_with do |controller|
+    if current_user.nil?
+      redirect_to main_app.root_path, flash: {error: 'Please Login to Continue..'}
+    elsif !current_user.super_admin?
+      redirect_to main_app.root_path, flash: {error: 'You are not Admin bro!'}
+    end
+  end
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  #config.authorize_with :cancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
