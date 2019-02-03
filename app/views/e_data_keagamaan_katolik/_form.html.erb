@@ -1,0 +1,27 @@
+<%= form_with(model: e_data_keagamaan_katolik, local: true) do |form| %>
+  <% if e_data_keagamaan_katolik.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(e_data_keagamaan_katolik.errors.count, "error") %> prohibited this e_data_keagamaan_katolik from being saved:</h2>
+
+      <ul>
+      <% e_data_keagamaan_katolik.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :judul %>
+    <%= form.text_field :judul %>
+  </div>
+
+  <div class="field">
+    <%= form.label :keterangan %>
+    <%= form.text_area :keterangan %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :e_data_keagamaan_katolik
 	devise_for :users, :controllers => {:registrations => "registrations"}
 
   get 'halaman/utama'
