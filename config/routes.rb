@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :e_data_keagamaan_katolik
 	devise_for :users, :controllers => {:registrations => "registrations"}
 
