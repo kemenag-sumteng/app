@@ -1,4 +1,5 @@
 class EDataKeagamaanKatolikController < ApplicationController
+  before_action :cek_user, only: [:new, :edit, :destroy, :edit]
   before_action :set_e_data_keagamaan_katolik, only: [:show, :edit, :update, :destroy]
 
   # GET /e_data_keagamaan_katolik

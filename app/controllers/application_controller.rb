@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:nama, :email, :password)}
 		devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:nama, :email, :password, :current_password)}
 	end
+
+	def cek_user
+		redirect_to e_data_keagamaan_katolik_index_path if !user_signed_in?
+	end
 end
