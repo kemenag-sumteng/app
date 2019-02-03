@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_03_115245) do
+ActiveRecord::Schema.define(version: 2019_02_03_130208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "e_data", force: :cascade do |t|
-    t.string "judul"
-    t.text "isi"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "e_data_keagamaan_katolik", force: :cascade do |t|
     t.string "judul"
@@ -38,6 +31,14 @@ ActiveRecord::Schema.define(version: 2019_02_03_115245) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nama"
+    t.boolean "super_admin", default: false
+    t.boolean "kasie_urakat", default: false
+    t.boolean "penyelenggara_pendakat", default: false
+    t.boolean "pegawai_urakat", default: false
+    t.boolean "pegawai_pendakat", default: false
+    t.boolean "anggota_urakat", default: false
+    t.boolean "anggota_pendakat", default: false
+    t.boolean "pengunjung", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
