@@ -26,7 +26,8 @@ class EDataKeagamaanKatolikController < ApplicationController
   # POST /e_data_keagamaan_katolik.json
   def create
     @e_data_keagamaan_katolik = EDataKeagamaanKatolik.new(e_data_keagamaan_katolik_params)
-
+    @e_data_keagamaan_katolik.user_id = current_user.id
+    
     respond_to do |format|
       if @e_data_keagamaan_katolik.save
         format.html { redirect_to @e_data_keagamaan_katolik, notice: 'E data keagamaan katolik was successfully created.' }
