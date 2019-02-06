@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_174258) do
+ActiveRecord::Schema.define(version: 2019_02_06_181543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_174258) do
     t.text "lampiran_data"
     t.string "attachment"
     t.text "link"
+    t.string "tautan"
     t.index ["user_id"], name: "index_e_data_keagamaan_katolik_on_user_id"
   end
 
