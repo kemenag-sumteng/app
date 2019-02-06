@@ -17,6 +17,7 @@
       <tr>
         <td><%= e_data_keagamaan_katolik.judul %></td>
         <td><%= e_data_keagamaan_katolik.keterangan %></td>
+        <td><%= link_to 'Unduh E Data Keagamaan Katolik', e_data_keagamaan_katolik.attachment.url %></td>
         <td><%= link_to 'Tampilkan', e_data_keagamaan_katolik %></td>
         <td><%= link_to 'Edit', edit_e_data_keagamaan_katolik_path(e_data_keagamaan_katolik) %></td>
         <td><%= link_to 'Hapus', e_data_keagamaan_katolik, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
