@@ -71,6 +71,6 @@ class EDataKeagamaanKatolikController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def e_data_keagamaan_katolik_params
-      params.require(:e_data_keagamaan_katolik).permit(:judul, :keterangan, :attachment)
+      params.require(:e_data_keagamaan_katolik).permit(:judul, :keterangan, :attachment, :tautan)
     end
 end
